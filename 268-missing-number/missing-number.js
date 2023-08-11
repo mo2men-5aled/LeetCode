@@ -3,17 +3,12 @@
  * @return {number}
  */
 
-
-var missingNumber = function (nums) {
-  let len = nums.length;
-  if (len === 0) return 0;
-
-  result = 0;
-  nums.map((num, index) => {
-    result += num - index;
-    console.log(result);
-  });
-  return len - result;
+var missingNumber = function(nums) {
+  const n = nums.length;
+  const expectedSum = (n * (n + 1)) / 2;
+  const actualSum = nums.reduce((sum, num) => sum + num, 0);
+  
+  return expectedSum - actualSum;
 };
 
 nums = [3,0,1]

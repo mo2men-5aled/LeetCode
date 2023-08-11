@@ -3,9 +3,9 @@
  * @return {number}
  */
 var lengthOfLastWord = function(s) {
-    const words = s.split(" ").reverse()
-    const filteredWords = words.filter(word=>word !=="")
-    return filteredWords[0].length
+    const words = s.trim().split(" ")
+    return words[words.length - 1].length;
+
 };
 
 lengthOfLastWord("   fly me   to   the moon  ")
